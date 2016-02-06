@@ -8,4 +8,8 @@ cd /home/simplonco/bureau
 cd /home/simplon/bureau
 git clone https://github.com/SimplonLab/SimplonDrone.git
 
+cd /home/simplonco/desktop/SimplonDrone
+cd /home/simplon/desktop/SimplonDrone
+cd /home/simplonco/bureau/SimplonDrone
+cd /home/simplon/bureau/SimplonDrone
 npm install

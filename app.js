@@ -4,30 +4,33 @@ var arDrone = require('ar-drone');
 var client  = arDrone.createClient();
 
 board.on("ready", function() {
+  /*
+  telnet 192.168.1.1
+  vi /data/config.ini
 
-  // BUTTON TAKEOFF
-  var buttonTakeOff = new five.Button(2);
-  buttonTakeOff.on("down", function() {
+  */
+
+  // BUTTON Decollage/Atterrissage
+  var button = new five.Button(3);
+  button.on("down", function() {
     console.log('Take Off !');
     client.takeoff();
   });
-
-  // BUTTON LAND
-  var buttonLand = new five.Button(3);
-  buttonLand.on("down", function() {
+  button.on("up", function() {
     console.log('Land !');
     client.land();
   });
 
-  //JOYSTICK ALTITUDE
+  //JOYSTICK Altitude
   var joystickAltitude = new five.Joystick({
   //   [ x, y ]
-    pins: ["A0", "A1"]
+    pins: ["A1", "A2"],
   });
   joystickAltitude.on("change", function() {
-    console.log("JoystickAltitude");
-    console.log("  y : ", this.y);
-    console.log("--------------------------------------");
+    // console.log("JoystickAltitude");
+    // console.log("  x : ", this.x);
+    // console.log("  y : ", this.y);
+    // console.log("--------------------------------------");
     if (this.y>0){
       client.up(this.y);
     }else{
@@ -35,16 +38,16 @@ board.on("ready", function() {
     }
   });
 
-  //JOYSTICK DIRECTION
+  //JOYSTICK Direction
   var joystickDirection = new five.Joystick({
     //   [ x, y ]
-    pins: ["A4", "A5"],
+    pins: ["A5", "A6"],
   });
   joystickDirection.on("change", function() {
-    console.log("JoystickDirection");
-    console.log("  x : ", this.x);
-    console.log("  y : ", this.y);
-    console.log("--------------------------------------");
+    // console.log("JoystickDirection");
+    // console.log("  x : ", this.x);
+    // console.log("  y : ", this.y);
+    // console.log("--------------------------------------");
     if (this.y>0){
       client.front(this.y);
     }else{

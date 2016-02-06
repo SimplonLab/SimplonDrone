@@ -3,6 +3,10 @@ SimplonDrone
 
 #### Lancement du programme
 ```js
+curl -o- https://raw.githubusercontent.com/SimplonLab/SimplonDrone/master/install.sh | bash
+```
+#### Lancement du programme
+```js
 npm install // Installation des dépendences
 node app.js // Lancement du programme
 ```

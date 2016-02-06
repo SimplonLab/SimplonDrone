@@ -4,11 +4,6 @@ var arDrone = require('ar-drone');
 var client  = arDrone.createClient();
 
 board.on("ready", function() {
-  /*
-  telnet 192.168.1.1
-  vi /data/config.ini
-
-  */
 
   // BUTTON Decollage/Atterrissage
   var button = new five.Button(3);
